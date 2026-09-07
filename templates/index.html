@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File for you</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <main class="tag">
+    <div class="tag__hole"></div>
+
+    <p class="tag__eyebrow">Local delivery &middot; this WiFi only</p>
+
+    <h1 class="tag__heading">There's a file<br>waiting for you</h1>
+
+    <dl class="tag__details">
+      <div class="tag__row">
+        <dt>Contents</dt>
+        <dd>{{ filename }}</dd>
+      </div>
+      <div class="tag__row">
+        <dt>Weight</dt>
+        <dd>{{ filesize }}</dd>
+      </div>
+      <div class="tag__row">
+        <dt>Packed on</dt>
+        <dd>{{ modified }}</dd>
+      </div>
+    </dl>
+
+    <a href="/download" class="tag__stamp" download>
+      <span>Download</span>
+    </a>
+
+    <p class="tag__footnote">Stays on your home network — never leaves the house.</p>
+  </main>
+
+</body>
+</html>
